@@ -1,0 +1,6 @@
+# Los legales de Kittsu viven en kittsu.com. Estas rutas existieron aqui
+# cuando el producto se llamaba 10Life; se redirigen para no romper builds
+# viejas de la app ni marcadores.
+/privacy.html         https://kittsu.com/privacy          301
+/terms.html           https://kittsu.com/terms            301
+/delete-account.html  https://kittsu.com/delete-account   301

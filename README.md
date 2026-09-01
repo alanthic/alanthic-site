@@ -14,15 +14,16 @@ Workspace viven en Namecheap y cambiar nameservers implicaría migrarlos.
 - CNAME `www` → `alanthic.netlify.app`
 - SSL: Let's Encrypt, renovación automática por Netlify
 
-## ⚠️ Antes de renombrar o borrar archivos
+## Legales
 
-`privacy.html`, `terms.html` y `delete-account.html` son remanentes del nombre
-viejo del producto (**10Life**, hoy **Kittsu**). Los legales vigentes de Kittsu
-viven en `kittsu.com/privacy`, `/terms` y `/delete-account`.
+Los legales de Kittsu viven en kittsu.com (`/privacy`, `/terms`,
+`/delete-account`) y son las URLs registradas en Play Console y App Store
+Connect. Este sitio ya no aloja ninguno.
 
-Antes de borrarlos, confirmar que Play Console y App Store Connect apunten a
-`kittsu.com` y no a estas rutas. Si una consola apunta acá y se borra el
-archivo, se rompe la ficha de la tienda.
+Las rutas `privacy.html`, `terms.html` y `delete-account.html` existieron aqui
+cuando el producto se llamaba 10Life. Se eliminaron, y `_redirects` las manda
+con 301 a kittsu.com para no romper builds viejas de la app ni marcadores.
+No reutilices esos nombres de archivo.
 
 ## Estructura
 
