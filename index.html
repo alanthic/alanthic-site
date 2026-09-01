@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alanthic is an independent digital products studio building mobile apps, AI tools, and games. Based in Houston, Texas.">
+    <title>Alanthic — Independent Digital Products Studio</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alanthic — Independent Digital Products Studio">
+    <meta property="og:description" content="An independent studio building mobile apps, AI tools, and games out of Houston, Texas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alanthic.co">
+    <meta property="og:site_name" content="Alanthic">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://alanthic.co/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alanthic — Independent Digital Products Studio">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alanthic — Independent Digital Products Studio">
+    <meta name="twitter:description" content="An independent studio building mobile apps, AI tools, and games out of Houston, Texas.">
+    <meta name="twitter:image" content="https://alanthic.co/og-image.png">
+
+    <link rel="canonical" href="https://alanthic.co/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- IMPORTANT: Google Search Console verification meta tag goes here.
+         Replace YOUR_VERIFICATION_TOKEN with the actual content value Google gives you.
+         <meta name="google-site-verification" content="YOUR_VERIFICATION_TOKEN" />
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream: #F5F1EA;
+            --paper: #EDE8DF;
+            --ink: #1A1614;
+            --terracotta: #B8442C;
+            --muted: #6B6259;
+            --divider: rgba(26, 22, 20, 0.08);
+
+            --font-serif: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+            --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--cream);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+
+        /* subtle paper texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(rgba(26, 22, 20, 0.015) 1px, transparent 1px);
+            background-size: 4px 4px;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* nav */
+        .nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .wordmark {
+            font-family: var(--font-serif);
+            font-size: 1.625rem;
+            font-style: italic;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .nav-meta {
+            font-size: 0.6875rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        /* hero */
+        .hero {
+            padding: 5rem 0 5rem;
+            max-width: 920px;
+        }
+
+        .eyebrow {
+            font-size: 0.6875rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 1px;
+            background: var(--terracotta);
+            vertical-align: middle;
+            margin-right: 0.75rem;
+            margin-bottom: 2px;
+        }
+
+        .headline {
+            font-family: var(--font-serif);
+            font-size: clamp(2.25rem, 7vw, 5rem);
+            line-height: 1.04;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .headline em {
+            font-style: italic;
+            color: var(--terracotta);
+        }
+
+        .subhead {
+            font-size: 1.0625rem;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 540px;
+        }
+
+        /* section */
+        .section {
+            padding: 3.5rem 0;
+            border-top: 1px solid var(--divider);
+        }
+
+        .section-label {
+            font-size: 0.6875rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        /* product */
+        .product {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .product + .product {
+            margin-top: 3.5rem;
+            padding-top: 3.5rem;
+            border-top: 1px solid var(--divider);
+        }
+
+        .product-name {
+            font-family: var(--font-serif);
+            font-size: clamp(1.875rem, 4vw, 2.625rem);
+            line-height: 1.1;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+            letter-spacing: -0.015em;
+        }
+
+        .product-tagline {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .product-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-meta-label {
+            font-size: 0.6875rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .product-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            align-items: center;
+        }
+
+        .product-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+            font-weight: 400;
+        }
+
+        .product-link:hover {
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .product-link .arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        .product-link:hover .arrow {
+            transform: translate(2px, -2px);
+        }
+
+        .product-soon {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            padding-bottom: 2px;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        /* about */
+        .about-text {
+            font-family: var(--font-serif);
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            line-height: 1.4;
+            max-width: 720px;
+            font-style: italic;
+            color: var(--ink);
+        }
+
+        /* contact */
+        .contact-email {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+            font-style: italic;
+            color: var(--terracotta);
+            text-decoration: none;
+            border-bottom: 1px solid var(--terracotta);
+            padding-bottom: 4px;
+            transition: opacity 0.2s ease;
+            display: inline-block;
+            word-break: break-word;
+        }
+
+        .contact-email:hover {
+            opacity: 0.75;
+        }
+
+        /* footer */
+        .footer {
+            padding: 3.5rem 0 2.5rem;
+            border-top: 1px solid var(--divider);
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            font-size: 0.8125rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .footer-block strong {
+            color: var(--ink);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.6875rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .footer-block a {
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .footer-block a:hover {
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* responsive */
+        @media (min-width: 720px) {
+            .container { padding: 0 3rem; }
+            .nav { padding: 2.5rem 0; }
+            .hero { padding: 7rem 0 6rem; }
+            .section { padding: 4.5rem 0; }
+            .product { grid-template-columns: 2fr 1fr; gap: 4rem; }
+            .footer-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .container { padding: 0 4rem; }
+        }
+
+        /* animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            opacity: 0;
+            animation: fadeUp 0.7s cubic-bezier(0.2, 0.65, 0.3, 0.95) forwards;
+        }
+
+        .animate-1 { animation-delay: 0.05s; }
+        .animate-2 { animation-delay: 0.15s; }
+        .animate-3 { animation-delay: 0.3s; }
+        .animate-4 { animation-delay: 0.5s; }
+
+        /* selection */
+        ::selection {
+            background: var(--terracotta);
+            color: var(--cream);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="nav">
+            <a href="/" class="wordmark animate animate-1">Alanthic</a>
+            <div class="nav-meta animate animate-1">Est. 2026</div>
+        </nav>
+
+        <section class="hero">
+            <div class="eyebrow animate animate-2">Independent Studio · Houston, Texas</div>
+            <h1 class="headline animate animate-3">
+                We build digital products <em>we'd want to use ourselves.</em>
+            </h1>
+            <p class="subhead animate animate-4">
+                Alanthic is an independent studio creating mobile apps, AI tools, and games.
+                Founded in 2026, focused on small, useful software that solves real problems.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-label">Products</div>
+
+            <div class="product">
+                <div>
+                    <h2 class="product-name">Kittsu</h2>
+                    <p class="product-tagline">
+                        Your money and your habits, in one place. Track expenses, budgets and
+                        goals, build daily routines and habits, and capture it all just by
+                        speaking — on‑device voice capture turns what you say into an entry.
+                    </p>
+                    <div class="product-links">
+                        <a href="https://apps.apple.com/app/id6774008612" class="product-link" target="_blank" rel="noopener">App Store <span class="arrow">↗</span></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.life10.miapp" class="product-link" target="_blank" rel="noopener">Google Play <span class="arrow">↗</span></a>
+                        <a href="https://kittsu.com/privacy" class="product-link" target="_blank" rel="noopener">Privacy <span class="arrow">↗</span></a>
+                        <a href="https://kittsu.com/terms" class="product-link" target="_blank" rel="noopener">Terms <span class="arrow">↗</span></a>
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <span class="product-meta-label">Platform</span>
+                    <span>iOS &amp; Android</span>
+                </div>
+            </div>
+
+            <div class="product">
+                <div>
+                    <h2 class="product-name">Sticker Tracker 2026</h2>
+                    <p class="product-tagline">
+                        Track your FIFA World Cup 2026 sticker album. Find duplicates,
+                        share progress with friends, and complete your collection.
+                        Over 1,100 collectors bought the Pro upgrade through the
+                        2026 World Cup season.
+                    </p>
+                    <div class="product-links">
+                        <a href="https://apps.apple.com/app/id6764354726" class="product-link" target="_blank" rel="noopener">App Store <span class="arrow">↗</span></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.disordnce.stickertracker" class="product-link" target="_blank" rel="noopener">Google Play <span class="arrow">↗</span></a>
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <span class="product-meta-label">Platform</span>
+                    <span>iOS &amp; Android</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-label">About the Studio</div>
+            <p class="about-text">
+                A studio of one. Building independently in public, learning out loud,
+                and shipping software that matters more than it markets.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-label">Get in Touch</div>
+            <a href="mailto:sergio.posada@alanthic.co" class="contact-email">
+                sergio.posada@alanthic.co
+            </a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-block">
+                    <strong>Alanthic LLC</strong>
+                    Houston, Texas<br>
+                    United States
+                </div>
+                <div class="footer-block">
+                    <strong>Contact</strong>
+                    <a href="mailto:sergio.posada@alanthic.co">sergio.posada@alanthic.co</a>
+                </div>
+                <div class="footer-block">
+                    <strong>Kittsu Legal</strong>
+                    <a href="https://kittsu.com/privacy" target="_blank" rel="noopener">Privacy Policy</a><br>
+                    <a href="https://kittsu.com/terms" target="_blank" rel="noopener">Terms of Service</a>
+                </div>
+                <div class="footer-block">
+                    <strong>© 2026 Alanthic LLC</strong>
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>

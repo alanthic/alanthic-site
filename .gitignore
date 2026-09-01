@@ -1,0 +1,26 @@
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Netlify
+.netlify/
+
+# Dependencias / build (por si el sitio crece)
+node_modules/
+dist/
+.cache/
+
+# Secretos — nunca commitear
+.env
+.env.*
+!.env.example
+*.pem
+*.key
