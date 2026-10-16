@@ -25,7 +25,17 @@ cuando el producto se llamaba 10Life. Se eliminaron, y `_redirects` las manda
 con 301 a kittsu.com para no romper builds viejas de la app ni marcadores.
 No reutilices esos nombres de archivo.
 
+### Pazo Run
+
+Los legales de Pazo Run viven aqui, en `/pazo/` (ingles) y `/pazo/es/` (espanol):
+`privacy/`, `health-data/` (politica de datos de salud de Washington, MHMDA: enlazada
+desde la portada como exige la ley), `terms/` (tambien sirve de EULA en las tiendas),
+`delete-account/` (URL de borrado de Play) y `support/` (Support URL de App Store).
+Cada pagina es `index.html` en su carpeta, con estilos en `pazo/legal.css`. Son las URLs
+registradas en las tiendas y en la app (`src/constants/links.ts` del repo RunApp): no
+las renombres. Contacto: support@alanthic.co.
+
 ## Estructura
 
 - `index.html` — landing del estudio
-- `privacy.html` / `terms.html` / `delete-account.html` — legales heredados (ver arriba)
+- `pazo/` — legales de Pazo Run (ver arriba)

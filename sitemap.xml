@@ -6,4 +6,40 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://alanthic.co/pazo/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/health-data/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/terms/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/delete-account/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/support/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/health-data/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/terms/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/delete-account/</loc>
+  </url>
+  <url>
+    <loc>https://alanthic.co/pazo/es/support/</loc>
+  </url>
 </urlset>
