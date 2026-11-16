@@ -33,7 +33,7 @@
         <h2 class="nombre" translate="no">Pazo Run</h2>
         <p class="que">{% t "Running plans from a first 5K to the marathon that adjust to the week you had and send every workout to your watch.", "Planes para correr, del primer 5K al maratón, que se ajustan a la semana que tuviste y mandan cada entreno al reloj." %}</p>
         <p class="dificil">{% t "Getting there meant writing <b>the Garmin watch app from scratch</b>. On the App Store since November 11, 2026.", "Para lograrlo hubo que escribir <b>la app del reloj Garmin desde cero</b>. En App Store desde el 11 de noviembre de 2026." %}</p>
-        <div class="salidas"><a href="{{ a.pazo.appStore }}">App Store</a><a href="{{ a.pazo.googlePlay }}">Google Play</a></div>
+        <div class="salidas"><a class="ver-caso" href="{{ "/es" if es }}/apps/pazo-run/">{% t "See the case", "Ver el caso" %} →</a><a href="{{ a.pazo.appStore }}">App Store</a><a href="{{ a.pazo.googlePlay }}">Google Play</a></div>
       </div>
       <div class="tira">
         <img src="/img/real-pazo-hoy.png" sizes="{{ tiraSizes }}" alt="{% t 'Today: how the run felt and what comes next', 'Hoy: cómo se sintió la carrera y lo que sigue' %}">
@@ -50,7 +50,7 @@
         <h2 class="nombre" translate="no">Collecty</h2>
         <p class="que">{% t "A vault and marketplace for collectibles where every piece keeps the story of its owners.", "Bóveda y mercado de coleccionables donde cada pieza guarda la historia de sus dueños." %}</p>
         <p class="dificil">{% t "Alanthic <b>designed and built the mobile app</b>. Product and web with TalentWise.", "Alanthic <b>diseñó y construyó la app móvil</b>. El producto y la web son con TalentWise." %}</p>
-        <div class="salidas"><a href="{{ a.collecty.appStore }}">App Store</a><a href="{{ a.collecty.googlePlay }}">Google Play</a></div>
+        <div class="salidas"><a class="ver-caso" href="{{ "/es" if es }}/apps/collecty/">{% t "See the case", "Ver el caso" %} →</a><a href="{{ a.collecty.appStore }}">App Store</a><a href="{{ a.collecty.googlePlay }}">Google Play</a></div>
       </div>
       <div class="tira">
         <img src="/img/real-collecty-inicio.png" sizes="{{ tiraSizes }}" alt="{% t 'Home: a featured piece from the marketplace', 'Inicio: una pieza destacada del mercado' %}">
@@ -67,7 +67,7 @@
         <h2 class="nombre" translate="no">Kittsu</h2>
         <p class="que">{% t "Money, routines and to-dos in one app: say a sentence and it's logged.", "Plata, rutinas y pendientes en una sola app: dices una frase y queda anotada." %}</p>
         <p class="dificil">{% t "Born as 10Life, <b>renamed without losing a single user or record</b>.", "Nació como 10Life y <b>cambió de nombre sin perder usuarios ni datos</b>." %}</p>
-        <div class="salidas"><a href="{{ a.kittsu.appStore }}">App Store</a><a href="{{ a.kittsu.googlePlay }}">Google Play</a></div>
+        <div class="salidas"><a class="ver-caso" href="{{ "/es" if es }}/apps/kittsu/">{% t "See the case", "Ver el caso" %} →</a><a href="{{ a.kittsu.appStore }}">App Store</a><a href="{{ a.kittsu.googlePlay }}">Google Play</a></div>
       </div>
       <div class="tira">
         <img src="/img/real-kittsu-finanzas.png" sizes="{{ tiraSizes }}" alt="{% t 'Money: the month at a glance', 'Finanzas: el mes de un vistazo' %}">
@@ -84,6 +84,7 @@
         <h2 class="nombre" translate="no">Sticker Tracker</h2>
         <p class="que">{% t "The World Cup 2026 album, scanned 25 stickers per photo.", "El álbum del Mundial 2026, escaneado de a 25 láminas por foto." %}</p>
         <p class="dificil">{% t "It closed at <b>4.9 stars from 59 ratings</b> on the App Store.", "Cerró con <b>4,9 estrellas y 59 calificaciones</b> en el App Store." %}</p>
+        <div class="salidas"><a class="ver-caso" href="{{ "/es" if es }}/apps/sticker-tracker/">{% t "See the case", "Ver el caso" %} →</a></div>
       </div>
       <div class="tira dos">
         <img src="/img/real-sticker-inicio.png" sizes="(max-width: 899px) 70vw, 280px" alt="{% t 'An album completed: 992 of 992', 'Un álbum completo: 992 de 992' %}">

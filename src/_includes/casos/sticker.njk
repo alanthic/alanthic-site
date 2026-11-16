@@ -1,0 +1,95 @@
+{%- set es = page.lang == "es" -%}
+{%- set inicioUrl = "/es/" if es else "/" -%}
+{%- set c = 'data-bg="#1B3A6B" data-fg="#FFFFFF" data-fg2="#C3CEE3" data-acento="#27AE60"' -%}
+{% include "nav.njk" %}
+
+<main id="contenido" class="caso sticker">
+  <section class="portada" {{ c | safe }}>
+    <div class="wrap">
+      <div>
+        <a class="volver" href="{{ inicioUrl }}#trabajos">← {% t "All work", "Todos los trabajos" %}</a>
+        <div class="rotulo"><img src="/img/logo-sticker.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. season over", "App propia. temporada terminada" %}</span></div>
+        <h1 class="nombre" translate="no">Sticker Tracker</h1>
+        <p class="linea">{% t "The World Cup 2026 album, scanned 25 stickers per photo.", "El álbum del Mundial 2026, escaneado de a 25 láminas por foto." %}</p>
+      </div>
+      <div class="tira dos">
+        <img src="/img/real-sticker-inicio.png" sizes="(max-width: 899px) 70vw, 280px" loading="eager" alt="{% t 'An album completed: 992 of 992', 'Un álbum completo: 992 de 992' %}">
+        <img src="/img/real-sticker-laminas.png" sizes="(max-width: 899px) 70vw, 280px" loading="eager" alt="{% t 'Every sticker, owned and doubled', 'Cada lámina, las que tienes y las repetidas' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "The problem", "El problema" %}</h2>
+      <p class="texto">{% t "The World Cup 2026 album has 992 stickers. Keeping track of which ones you have, which you're missing and which you can trade means <b>ticking hundreds of numbers by hand</b>, page after page.", "El álbum del Mundial 2026 tiene 992 láminas. Llevar la cuenta de cuáles tienes, cuáles te faltan y cuáles puedes cambiar es <b>marcar cientos de números a mano</b>, página tras página." %}</p>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What was hard", "Lo difícil" %}</h2>
+      <div class="retos">
+        <div class="reto">
+          <div>
+            <h3>{% t "25 stickers in one photo", "25 láminas en una sola foto" %}</h3>
+            <p>{% t "You photograph a page and a vision model reads every sticker number on it, on a Firebase server. The app then marks what you have and counts your doubles.", "Le tomas foto a una página y un modelo de visión lee cada número de lámina, en un servidor de Firebase. La app marca las que tienes y cuenta tus repetidas." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/real-sticker-laminas.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'The sticker grid after scanning', 'La cuadrícula de láminas después de escanear' %}"><figcaption>{% t "Owned, missing and doubles.", "Las que tienes, las que faltan y las repetidas." %}</figcaption></figure>
+        </div>
+        <div class="reto">
+          <div>
+            <h3>{% t "AI costs that can't run away", "Costos de IA que no se disparan" %}</h3>
+            <p>{% t "Each scan is reserved before the AI is called and refunded if the AI fails, so heavy use can't turn into a surprise bill. Five scans are free; Pro includes 200.", "Cada escaneo se reserva antes de llamar a la IA y se devuelve si la IA falla, así el uso no se vuelve una factura sorpresa. Cinco escaneos son gratis y Pro incluye 200." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/real-sticker-inicio.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'Collection progress at 100 percent', 'El progreso de la colección al 100 por ciento' %}"><figcaption>{% t "An album, finished.", "Un álbum, terminado." %}</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Decisions", "Decisiones" %}</h2>
+      <ul class="decisiones">
+        <li><h3>{% t "An app with an end date", "Una app con fecha de cierre" %}</h3><p>{% t "Built for one tournament and closed when it ended.", "Hecha para un solo torneo y cerrada cuando terminó." %}</p><p class="no">{% t "<b>Left out:</b> stretching it past the World Cup.", "<b>Descartado:</b> estirarla más allá del Mundial." %}</p></li>
+        <li><h3>{% t "AI on the server", "La IA en el servidor" %}</h3><p>{% t "The phone sends the photo; the AI key never ships inside the app.", "El teléfono manda la foto; la llave de la IA nunca va dentro de la app." %}</p><p class="no">{% t "<b>Left out:</b> calling the AI straight from the phone.", "<b>Descartado:</b> llamar a la IA directo desde el teléfono." %}</p></li>
+        <li><h3>{% t "Retakes are free", "Repetir la foto no cuesta" %}</h3><p>{% t "A blurry photo can be taken again without spending a scan.", "Una foto borrosa se puede repetir sin gastar un escaneo." %}</p><p class="no">{% t "<b>Left out:</b> charging for the AI's mistakes.", "<b>Descartado:</b> cobrar por los errores de la IA." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "How it ended", "Cómo terminó" %}</h2>
+      <ul class="hechos">
+        <li><div class="dato">{% t "4.9 stars from 59 ratings", "4,9 estrellas con 59 calificaciones" %}</div><p class="fuente">{% t "App Store, November 2026.", "App Store, noviembre de 2026." %}</p></li>
+        <li><div class="dato">{% t "992 stickers, one album", "992 láminas, un álbum" %}</div><p class="fuente">{% t "World Cup 2026.", "Mundial 2026." %}</p></li>
+        <li><div class="dato">{% t "Season over", "Temporada terminada" %}</div><p class="fuente">{% t "Closed with the tournament.", "Cerró con el torneo." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What Alanthic did", "Qué hizo Alanthic" %}</h2>
+      <dl class="ficha">
+        <div><dt>{% t "Project", "Proyecto" %}</dt><dd>{% t "Own product", "Producto propio" %}</dd></div>
+        <div><dt>{% t "Platforms", "Plataformas" %}</dt><dd>{% t "iPhone and Android", "iPhone y Android" %}</dd></div>
+        <div><dt>{% t "Role", "Rol" %}</dt><dd>{% t "Product, design, app and server", "Producto, diseño, app y servidor" %}</dd></div>
+        <div><dt>{% t "Built with", "Hecho con" %}</dt><dd>{% t "One codebase for iPhone and Android (Expo), Firebase and an OpenAI vision model", "Una sola base de código para iPhone y Android (Expo), Firebase y un modelo de visión de OpenAI" %}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  {%- set tituloContacto = "¿Tienes algo parecido en mente?" if es else "Have something similar in mind?" %}
+  {% include "contacto.njk" %}
+
+  <section class="siguiente" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <a href="{{ '/es' if es }}/apps/pazo-run/" style="--p-bg:#0B0D0A;--p-fg:#F2F5EC"><img src="/img/logo-pazo.png" alt="" sizes="52px" eleventy:widths="104"><span><small>{% t "Next", "Siguiente" %}</small><b translate="no">Pazo Run</b></span></a>
+    </div>
+  </section>
+</main>
+
+{% include "pie.njk" %}

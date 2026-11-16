@@ -281,3 +281,9 @@ a.idioma { display: inline-flex; align-items: center; min-height: 44px; }
   .decisiones, .hechos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
   .ficha { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
+.reto figure.telefono { max-width: 220px; }
+.reto figure.telefono img { border-radius: 18px; }
+@media (min-width: 900px) { .reto:has(.telefono) { grid-template-columns: 1fr 220px; } .reto:nth-child(even):has(.telefono) { grid-template-columns: 220px 1fr; } }
+
+.salidas a.ver-caso { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.125rem; border-radius: 8px; background: var(--fg); color: var(--bg); transition: background-color var(--cambio), color var(--cambio), transform 160ms var(--salida, cubic-bezier(.23,1,.32,1)); }
+.salidas a.ver-caso:active { transform: scale(0.97); }

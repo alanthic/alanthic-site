@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy && node scripts/verificar-pazo.mjs",
+    "build": "eleventy && node scripts/verificar-pazo.mjs && node scripts/verificar-enlaces.mjs",
     "dev": "eleventy --serve --port 8090"
   },
   "devDependencies": {

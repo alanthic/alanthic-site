@@ -1,0 +1,98 @@
+{%- set es = page.lang == "es" -%}
+{%- set a = sitio.apps -%}
+{%- set inicioUrl = "/es/" if es else "/" -%}
+{%- set c = 'data-bg="#0D0F17" data-fg="#F4F2EE" data-fg2="#A3A6B3" data-acento="#FE7144"' -%}
+{% include "nav.njk" %}
+
+<main id="contenido" class="caso kittsu">
+  <section class="portada" {{ c | safe }}>
+    <div class="wrap">
+      <div>
+        <a class="volver" href="{{ inicioUrl }}#trabajos">← {% t "All work", "Todos los trabajos" %}</a>
+        <div class="rotulo"><img src="/img/logo-kittsu.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. iOS and Android", "App propia. iOS y Android" %}</span></div>
+        <h1 class="nombre" translate="no">Kittsu</h1>
+        <p class="linea">{% t "Say it once. Kittsu files it.", "Lo dices una vez y Kittsu lo anota." %}</p>
+        <div class="salidas"><a href="{{ a.kittsu.appStore }}">App Store</a><a href="{{ a.kittsu.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-kittsu-finanzas.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'Money: the month at a glance', 'Finanzas: el mes de un vistazo' %}">
+        <img src="/img/real-kittsu-voz.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'A spoken sentence turned into an expense', 'Una frase dicha en voz alta convertida en gasto' %}">
+        <img src="/img/real-kittsu-rutina.png" sizes="(max-width: 899px) 70vw, 230px" alt="{% t 'Routine: tasks and habits for today', 'Rutina: tareas y hábitos de hoy' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "The problem", "El problema" %}</h2>
+      <p class="texto">{% t "Expenses in one app, habits in another, to-dos in a third. Logging everything takes so many taps that people stop logging. Kittsu puts money, routines and to-dos in one place, and <b>the fastest way in is a sentence said out loud</b>.", "Los gastos en una app, los hábitos en otra y los pendientes en una tercera. Anotar todo cuesta tantos toques que la gente deja de anotar. Kittsu junta plata, rutinas y pendientes en un solo lugar, y <b>la forma más rápida de anotar es decir una frase en voz alta</b>." %}</p>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What was hard", "Lo difícil" %}</h2>
+      <div class="retos">
+        <div class="reto">
+          <div>
+            <h3>{% t "One sentence, several records", "Una frase, varios registros" %}</h3>
+            <p>{% t "\"I had a $4 coffee and lunch was $26\" is two expenses, each with its amount, currency and category. The phone turns speech into text as you talk, and an AI model reads that text and returns structured records: an expense, a habit, a task. Nothing is saved until you check it.", "\"Hoy me tomé un café de $4 y el almuerzo me costó $26\" son dos gastos, cada uno con su monto, su moneda y su categoría. El teléfono pasa la voz a texto mientras hablas, y un modelo de IA lee ese texto y devuelve registros con estructura: un gasto, un hábito, una tarea. Nada se guarda hasta que lo revisas." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/real-kittsu-voz.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'The review screen with the sentence turned into an expense', 'La pantalla de revisión con la frase convertida en gasto' %}"><figcaption>{% t "What Kittsu understood, ready to review.", "Lo que entendió Kittsu, listo para revisar." %}</figcaption></figure>
+        </div>
+        <div class="reto">
+          <div>
+            <h3>{% t "Renaming a live app", "Cambiarle el nombre a una app publicada" %}</h3>
+            <p>{% t "Kittsu launched as 10Life. The new name, colors and domain went out in August 2026 while the app identifiers, the deep links and every record stayed exactly as they were. The old legal links still redirect to the new site.", "Kittsu salió como 10Life. El nombre, los colores y el dominio nuevos salieron en agosto de 2026, mientras los identificadores de la app, los enlaces internos y cada registro quedaron exactamente igual. Los enlaces legales viejos siguen llevando al sitio nuevo." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/real-kittsu-rutina.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'The routine screen after the rename', 'La pantalla de rutina después del cambio de nombre' %}"><figcaption>{% t "Same data, new name.", "Los mismos datos, otro nombre." %}</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Decisions", "Decisiones" %}</h2>
+      <ul class="decisiones">
+        <li><h3>{% t "Text travels, audio doesn't", "Viaja el texto, no el audio" %}</h3><p>{% t "Kittsu never receives or stores your recording: only the transcribed text reaches the AI.", "Kittsu nunca recibe ni guarda tu grabación: a la IA solo llega el texto transcrito." %}</p><p class="no">{% t "<b>Left out:</b> uploading voice notes to a server.", "<b>Descartado:</b> subir notas de voz a un servidor." %}</p></li>
+        <li><h3>{% t "You confirm before it saves", "Tú confirmas antes de guardar" %}</h3><p>{% t "Every capture lands on a review screen where you can fix the amount, the category or the date.", "Cada captura llega a una pantalla de revisión donde corriges el monto, la categoría o la fecha." %}</p><p class="no">{% t "<b>Left out:</b> saving straight from the microphone.", "<b>Descartado:</b> guardar directo desde el micrófono." %}</p></li>
+        <li><h3>{% t "A rename, not a migration", "Un cambio de nombre, no una migración" %}</h3><p>{% t "The technical identifiers were frozen on purpose, so updating the app was all anyone had to do.", "Los identificadores técnicos se congelaron a propósito, así que bastaba con actualizar la app." %}</p><p class="no">{% t "<b>Left out:</b> a clean rename that would have moved everyone's data.", "<b>Descartado:</b> un cambio \"limpio\" que obligaba a mover los datos de todos." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Where it is today", "Dónde está hoy" %}</h2>
+      <ul class="hechos">
+        <li><div class="dato">{% t "On the App Store and Google Play", "En App Store y Google Play" %}</div><p class="fuente">{% t "Version 1.3.", "Versión 1.3." %}</p></li>
+        <li><div class="dato">{% t "Renamed without losing users or data", "Cambió de nombre sin perder usuarios ni datos" %}</div><p class="fuente">{% t "From 10Life to Kittsu, August 2026.", "De 10Life a Kittsu, agosto de 2026." %}</p></li>
+        <li><div class="dato">{% t "Money, routines and to-dos", "Plata, rutinas y pendientes" %}</div><p class="fuente">{% t "One app, one sentence.", "Una app, una frase." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What Alanthic did", "Qué hizo Alanthic" %}</h2>
+      <dl class="ficha">
+        <div><dt>{% t "Project", "Proyecto" %}</dt><dd>{% t "Own product", "Producto propio" %}</dd></div>
+        <div><dt>{% t "Platforms", "Plataformas" %}</dt><dd>{% t "iPhone and Android", "iPhone y Android" %}</dd></div>
+        <div><dt>{% t "Role", "Rol" %}</dt><dd>{% t "Product, design, app, server and the rename", "Producto, diseño, app, servidor y el cambio de nombre" %}</dd></div>
+        <div><dt>{% t "Built with", "Hecho con" %}</dt><dd>{% t "One codebase for iPhone and Android (Expo), Supabase, the phone's own speech recognition and Claude, from Anthropic, to read each sentence", "Una sola base de código para iPhone y Android (Expo), Supabase, el reconocimiento de voz del teléfono y Claude, de Anthropic, para leer cada frase" %}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  {%- set tituloContacto = "¿Tienes algo parecido en mente?" if es else "Have something similar in mind?" %}
+  {% include "contacto.njk" %}
+
+  <section class="siguiente" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <a href="{{ '/es' if es }}/apps/sticker-tracker/" style="--p-bg:#1B3A6B;--p-fg:#FFFFFF"><img src="/img/logo-sticker.png" alt="" sizes="52px" eleventy:widths="104"><span><small>{% t "Next", "Siguiente" %}</small><b translate="no">Sticker Tracker</b></span></a>
+    </div>
+  </section>
+</main>
+
+{% include "pie.njk" %}

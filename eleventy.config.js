@@ -3,7 +3,7 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 export default function (eleventyConfig) {
   // Lo que ya está registrado en tiendas y apps sale byte por byte (lo comprueba scripts/verificar-pazo.mjs).
-  for (const ruta of ["pazo", "_redirects", "robots.txt", "favicon.svg", "favicon-32.png", "apple-touch-icon.png", "og-image.png", "og-en.png", "og-es.png"]) {
+  for (const ruta of ["pazo", "_redirects", "robots.txt", "favicon.svg", "favicon-32.png", "apple-touch-icon.png", "og-image.png", "og-en.png", "og-es.png", "og"]) {
     eleventyConfig.addPassthroughCopy(ruta);
   }
 

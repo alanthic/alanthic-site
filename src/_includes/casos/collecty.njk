@@ -1,0 +1,99 @@
+{%- set es = page.lang == "es" -%}
+{%- set a = sitio.apps -%}
+{%- set inicioUrl = "/es/" if es else "/" -%}
+{%- set c = 'data-bg="#F4EEE3" data-fg="#1F1A12" data-fg2="#6F5520" data-acento="#CDA75C"' -%}
+{% include "nav.njk" %}
+
+<main id="contenido" class="caso collecty">
+  <section class="portada" {{ c | safe }}>
+    <div class="wrap">
+      <div>
+        <a class="volver" href="{{ inicioUrl }}#trabajos">← {% t "All work", "Todos los trabajos" %}</a>
+        <div class="rotulo"><img src="/img/logo-collecty.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "With TalentWise. iOS and Android", "Con TalentWise. iOS y Android" %}</span></div>
+        <h1 class="nombre" translate="no">Collecty</h1>
+        <p class="linea">{% t "The collectibles marketplace, now in your pocket.", "El mercado de coleccionables, ahora en tu bolsillo." %}</p>
+        <p class="que">{% t "Alanthic designed and built the mobile app. Product and web with TalentWise.", "Alanthic diseñó y construyó la app móvil. El producto y la web son con TalentWise." %}</p>
+        <div class="salidas"><a href="{{ a.collecty.appStore }}">App Store</a><a href="{{ a.collecty.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-collecty-inicio.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'Home: a featured piece from the marketplace', 'Inicio: una pieza destacada del mercado' %}">
+        <img src="/img/collecty-1.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'A piece with its passport', 'Una pieza con su pasaporte' %}">
+        <img src="/img/collecty-4.png" sizes="(max-width: 899px) 70vw, 230px" alt="{% t 'Pieces on display', 'Piezas en vitrina' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "The problem", "El problema" %}</h2>
+      <p class="texto">{% t "Collecty's web marketplace was already live: a vault for every collector, a passport that keeps each piece's history, and a place to buy and sell. The app had to bring <b>the same accounts, vault and marketplace to the phone</b>, as a real app and not a website in a frame.", "El mercado web de Collecty ya estaba en producción: una bóveda para cada coleccionista, un pasaporte que guarda la historia de cada pieza y un lugar para comprar y vender. La app tenía que llevar <b>las mismas cuentas, la misma bóveda y el mismo mercado al celular</b>, como app de verdad y no como una página dentro de un marco." %}</p>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What was hard", "Lo difícil" %}</h2>
+      <div class="retos">
+        <div class="reto">
+          <div>
+            <h3>{% t "A second client for someone else's server", "Un segundo cliente para el servidor de otro equipo" %}</h3>
+            <p>{% t "The app talks to the same production database as the website, and TalentWise owns that server. Every change the app needed was requested in writing and landed as a reviewed pull request in their repository, so the website never broke because of the app.", "La app habla con la misma base de datos de producción que la web, y ese servidor es de TalentWise. Cada cambio que la app necesitó se pidió por escrito y entró como un pull request revisado en su repositorio, así la web nunca se dañó por culpa de la app." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/collecty-1.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'A piece and its passport in the app', 'Una pieza y su pasaporte en la app' %}"><figcaption>{% t "A piece and its passport, in the app.", "Una pieza y su pasaporte, en la app." %}</figcaption></figure>
+        </div>
+        <div class="reto">
+          <div>
+            <h3>{% t "Plans from the web and from the stores", "Planes de la web y de las tiendas" %}</h3>
+            <p>{% t "A collector can pay on the website or through the App Store or Google Play. The app reads where each plan came from, so nobody gets charged twice for the same thing.", "Un coleccionista puede pagar en la web o con App Store o Google Play. La app sabe de dónde viene cada plan, así nadie paga dos veces por lo mismo." %}</p>
+          </div>
+          <figure class="telefono"><img src="/img/collecty-4.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'Pieces on display in the app', 'Piezas en vitrina en la app' %}"><figcaption>{% t "A collector's pieces, in the app.", "Las piezas de un coleccionista, en la app." %}</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Decisions", "Decisiones" %}</h2>
+      <ul class="decisiones">
+        <li><h3>{% t "The web is the reference", "La web es la referencia" %}</h3><p>{% t "Each screen follows the website on a phone, in content and order. Improvements are proposed separately.", "Cada pantalla sigue a la web vista en el celular, en contenido y orden. Las mejoras se proponen aparte." %}</p><p class="no">{% t "<b>Left out:</b> redesigning on the quiet.", "<b>Descartado:</b> rediseñar en silencio." %}</p></li>
+        <li><h3>{% t "Native, with few exceptions", "Nativa, con pocas excepciones" %}</h3><p>{% t "Only the terms, the privacy policy and the Mercado Pago checkout open in the browser.", "Solo los términos, la política de privacidad y el pago de Mercado Pago se abren en el navegador." %}</p><p class="no">{% t "<b>Left out:</b> wrapping the website in an app.", "<b>Descartado:</b> meter la web dentro de una app." %}</p></li>
+        <li><h3>{% t "One server, one owner", "Un servidor, un dueño" %}</h3><p>{% t "The app never changes the database on its own; the server stays with the team that runs it.", "La app nunca cambia la base de datos por su cuenta; el servidor sigue en manos del equipo que lo opera." %}</p><p class="no">{% t "<b>Left out:</b> a parallel backend just for the app.", "<b>Descartado:</b> un servidor paralelo solo para la app." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Where it is today", "Dónde está hoy" %}</h2>
+      <ul class="hechos">
+        <li><div class="dato">{% t "On the App Store and Google Play", "En App Store y Google Play" %}</div><p class="fuente">{% t "App Store since October 31, 2026.", "App Store desde el 31 de octubre de 2026." %}</p></li>
+        <li><div class="dato">{% t "One account, web and app", "Una cuenta, web y app" %}</div><p class="fuente">{% t "Same vault, passports and marketplace.", "La misma bóveda, pasaportes y mercado." %}</p></li>
+        <li><div class="dato">{% t "Built with TalentWise", "Hecha con TalentWise" %}</div><p class="fuente">{% t "Product and web by TalentWise.", "Producto y web de TalentWise." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What Alanthic did", "Qué hizo Alanthic" %}</h2>
+      <dl class="ficha">
+        <div><dt>{% t "Project", "Proyecto" %}</dt><dd>{% t "Partnership with TalentWise", "Alianza con TalentWise" %}</dd></div>
+        <div><dt>{% t "Platforms", "Plataformas" %}</dt><dd>{% t "iPhone and Android", "iPhone y Android" %}</dd></div>
+        <div><dt>{% t "Role", "Rol" %}</dt><dd>{% t "Design and build of the mobile app, store publishing", "Diseño y construcción de la app móvil, publicación en las tiendas" %}</dd></div>
+        <div><dt>{% t "Built with", "Hecho con" %}</dt><dd>{% t "One codebase for iPhone and Android (Expo) on the website's Supabase, with RevenueCat for store plans", "Una sola base de código para iPhone y Android (Expo) sobre el Supabase de la web, con RevenueCat para los planes de las tiendas" %}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  {%- set tituloContacto = "¿Tienes algo parecido en mente?" if es else "Have something similar in mind?" %}
+  {% include "contacto.njk" %}
+
+  <section class="siguiente" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <a href="{{ '/es' if es }}/apps/kittsu/" style="--p-bg:#0D0F17;--p-fg:#F4F2EE"><img src="/img/logo-kittsu.png" alt="" sizes="52px" eleventy:widths="104"><span><small>{% t "Next", "Siguiente" %}</small><b translate="no">Kittsu</b></span></a>
+    </div>
+  </section>
+</main>
+
+{% include "pie.njk" %}
