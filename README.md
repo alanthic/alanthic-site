@@ -2,7 +2,12 @@
 
 Sitio institucional de **Alanthic LLC** — [alanthic.co](https://alanthic.co)
 
-HTML estático, sin build step. Se edita directo y se publica.
+Eleventy 3 genera HTML plano en `_site/` (`npm run build`; `npm run dev` sirve en el puerto 8090).
+Inglés en `/` y español en `/es/`; los textos van en par con `{% t "English", "Español" %}`.
+Enlaces de tiendas, legales y correo: `src/_data/sitio.js`.
+
+`pazo/`, `_redirects` y `robots.txt` pasan sin tocar, y `scripts/verificar-pazo.mjs`
+hace fallar el build si alguno no sale byte por byte idéntico.
 
 ## Deploy
 
@@ -37,5 +42,10 @@ las renombres. Contacto: support@alanthic.co.
 
 ## Estructura
 
-- `index.html` — landing del estudio
+- `src/_includes/inicio.njk` — el inicio (EN y ES salen de la misma plantilla)
+- `src/_includes/base.njk` — cabecera: SEO, hreflang, OG, favicon
+- `src/css/sitio.css` — la Vitrina (tokens en `alanthic-brand/vitrina/tokens.css`)
+- `src/js/casa.js` — la casa toma el color de cada cuarto; copiar el correo
+- `src/img/` — pantallas y logos; Eleventy las sirve en AVIF, WebP y PNG
 - `pazo/` — legales de Pazo Run (ver arriba)
+- Formulario de contacto: Netlify Forms (`contacto`), con página de gracias en cada idioma

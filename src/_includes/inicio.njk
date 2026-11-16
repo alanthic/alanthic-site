@@ -1,0 +1,197 @@
+{%- set es = page.lang == "es" -%}
+{%- set a = sitio.apps -%}
+{%- set tiraSizes = "(max-width: 899px) 70vw, 230px" -%}
+<a class="saltar" href="#contenido">{% t "Skip to content", "Saltar al contenido" %}</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="marca" href="{{ '/es/' if es else '/' }}" aria-label="Alanthic">Alanthic <svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><circle cx="4" cy="5" r="4"/><circle cx="15" cy="5" r="3"/><circle cx="25" cy="5" r="2"/></svg></a>
+    <nav class="cuartos" aria-label="{% t 'Main', 'Principal' %}">
+      <a href="#trabajos">{% t "Work", "Trabajos" %}</a><a href="#servicios">{% t "Services", "Servicios" %}</a><a href="#como">{% t "How it works", "Cómo se trabaja" %}</a><a href="#estudio">{% t "Studio", "Estudio" %}</a>
+    </nav>
+    {%- if es %}
+    <a class="idioma" href="/" lang="en" hreflang="en">English</a>
+    {%- else %}
+    <a class="idioma" href="/es/" lang="es" hreflang="es">Español</a>
+    {%- endif %}
+    <a class="boton" href="#contacto">{% t "Contact", "Contacto" %}</a>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="heroe" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <h1>{% t "Apps, websites and online stores, from idea to launch.", "Apps, sitios web y tiendas en línea, de la idea al lanzamiento." %}</h1>
+      <p class="bajada">{% t "Alanthic is a digital product studio for startups and founders in Latin America and the United States. It designs, builds, ships and maintains what you launch, in English and Spanish.", "Alanthic es un estudio de producto digital para startups y emprendedores en Latinoamérica y Estados Unidos. Diseña, construye, publica y mantiene lo que lanzas. En español y en inglés." %}</p>
+      <div class="acciones"><a class="boton" href="#contacto">{% t "Tell me about your project", "Contar mi proyecto" %}</a><a href="#trabajos">{% t "See the work", "Ver trabajos" %}</a></div>
+      <p class="prueba">{% t "<b>Four apps live</b> on the App Store and Google Play, and <b>a Shopify store</b> about to open. All designed, built and maintained by Alanthic.", "<b>Cuatro apps publicadas</b> en App Store y Google Play y <b>una tienda en Shopify</b> a punto de abrir. Todo diseñado, construido y mantenido por Alanthic." %}</p>
+    </div>
+  </section>
+
+  <section id="trabajos" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <div class="trabajos-titulo"><h2>{% t "Work", "Trabajos" %}</h2><p>{% t "Each one in its own colors. Step into any of them.", "Cada uno con sus colores. Entra a cualquiera." %}</p></div>
+      <ul class="puertas">
+        <li class="puerta" style="--p-bg:#0B0D0A;--p-fg:#F2F5EC"><a href="#pazo"><img src="/img/logo-pazo.png" alt="" sizes="52px" loading="eager" eleventy:widths="104"><div><div class="n" translate="no">Pazo Run</div><div class="tipo">{% t "Own app", "App propia" %}</div></div></a></li>
+        <li class="puerta" style="--p-bg:#F4EEE3;--p-fg:#1F1A12"><a href="#collecty"><img src="/img/logo-collecty.png" alt="" sizes="52px" loading="eager" eleventy:widths="104"><div><div class="n" translate="no">Collecty</div><div class="tipo">{% t "With TalentWise", "Con TalentWise" %}</div></div></a></li>
+        <li class="puerta" style="--p-bg:#0D0F17;--p-fg:#F4F2EE"><a href="#kittsu"><img src="/img/logo-kittsu.png" alt="" sizes="52px" loading="eager" eleventy:widths="104"><div><div class="n" translate="no">Kittsu</div><div class="tipo">{% t "Own app", "App propia" %}</div></div></a></li>
+        <li class="puerta" style="--p-bg:#1B3A6B;--p-fg:#FFFFFF"><a href="#sticker"><img src="/img/logo-sticker.png" alt="" sizes="52px" loading="eager" eleventy:widths="104"><div><div class="n" translate="no">Sticker Tracker</div><div class="tipo">{% t "Own app", "App propia" %}</div></div></a></li>
+        <li class="puerta cliente"><a href="#kintal"><div class="marco">{% t "Client", "Cliente" %}</div><div><div class="n" translate="no">Kintal</div><div class="tipo">{% t "Shopify store", "Tienda en Shopify" %}</div></div></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cuarto pazo" id="pazo" data-bg="#0B0D0A" data-fg="#F2F5EC" data-fg2="#A6AC9E" data-acento="#C8FF2E">
+    <div class="wrap">
+      <div>
+        <div class="rotulo"><img src="/img/logo-pazo.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. iOS, Android and Garmin", "App propia. iOS, Android y Garmin" %}</span></div>
+        <h2 class="nombre" translate="no">Pazo Run</h2>
+        <p class="que">{% t "Running plans from a first 5K to the marathon that adjust to the week you had and send every workout to your watch.", "Planes para correr, del primer 5K al maratón, que se ajustan a la semana que tuviste y mandan cada entreno al reloj." %}</p>
+        <p class="dificil">{% t "Getting there meant writing <b>the Garmin watch app from scratch</b>. On the App Store since November 11, 2026.", "Para lograrlo hubo que escribir <b>la app del reloj Garmin desde cero</b>. En App Store desde el 11 de noviembre de 2026." %}</p>
+        <div class="salidas"><a href="{{ a.pazo.appStore }}">App Store</a><a href="{{ a.pazo.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-pazo-hoy.png" sizes="{{ tiraSizes }}" alt="{% t 'Today: how the run felt and what comes next', 'Hoy: cómo se sintió la carrera y lo que sigue' %}">
+        <img src="/img/real-pazo-plan.png" sizes="{{ tiraSizes }}" alt="{% t 'The plan, phase by phase', 'El plan, fase por fase' %}">
+        <img src="/img/real-pazo-progreso.png" sizes="{{ tiraSizes }}" alt="{% t 'Weekly distance and predicted race time', 'Distancia semanal y tiempo estimado de carrera' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="cuarto collecty izq" id="collecty" data-bg="#F4EEE3" data-fg="#1F1A12" data-fg2="#6F5520" data-acento="#CDA75C">
+    <div class="wrap">
+      <div>
+        <div class="rotulo"><img src="/img/logo-collecty.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "With TalentWise. iOS and Android", "Con TalentWise. iOS y Android" %}</span></div>
+        <h2 class="nombre" translate="no">Collecty</h2>
+        <p class="que">{% t "A vault and marketplace for collectibles where every piece keeps the story of its owners.", "Bóveda y mercado de coleccionables donde cada pieza guarda la historia de sus dueños." %}</p>
+        <p class="dificil">{% t "Alanthic <b>designed and built the mobile app</b>. Product and web with TalentWise.", "Alanthic <b>diseñó y construyó la app móvil</b>. El producto y la web son con TalentWise." %}</p>
+        <div class="salidas"><a href="{{ a.collecty.appStore }}">App Store</a><a href="{{ a.collecty.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-collecty-inicio.png" sizes="{{ tiraSizes }}" alt="{% t 'Home: a featured piece from the marketplace', 'Inicio: una pieza destacada del mercado' %}">
+        <img src="/img/collecty-1.png" sizes="{{ tiraSizes }}" alt="{% t 'A piece with its passport', 'Una pieza con su pasaporte' %}">
+        <img src="/img/collecty-4.png" sizes="{{ tiraSizes }}" alt="{% t 'Pieces on display', 'Piezas en vitrina' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="cuarto kittsu" id="kittsu" data-bg="#0D0F17" data-fg="#F4F2EE" data-fg2="#A3A6B3" data-acento="#FE7144">
+    <div class="wrap">
+      <div>
+        <div class="rotulo"><img src="/img/logo-kittsu.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. iOS and Android", "App propia. iOS y Android" %}</span></div>
+        <h2 class="nombre" translate="no">Kittsu</h2>
+        <p class="que">{% t "Money, routines and to-dos in one app: say a sentence and it's logged.", "Plata, rutinas y pendientes en una sola app: dices una frase y queda anotada." %}</p>
+        <p class="dificil">{% t "Born as 10Life, <b>renamed without losing a single user or record</b>.", "Nació como 10Life y <b>cambió de nombre sin perder usuarios ni datos</b>." %}</p>
+        <div class="salidas"><a href="{{ a.kittsu.appStore }}">App Store</a><a href="{{ a.kittsu.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-kittsu-finanzas.png" sizes="{{ tiraSizes }}" alt="{% t 'Money: the month at a glance', 'Finanzas: el mes de un vistazo' %}">
+        <img src="/img/real-kittsu-voz.png" sizes="{{ tiraSizes }}" alt="{% t 'A spoken sentence turned into an expense', 'Una frase dicha en voz alta convertida en gasto' %}">
+        <img src="/img/real-kittsu-rutina.png" sizes="{{ tiraSizes }}" alt="{% t 'Routine: tasks and habits for today', 'Rutina: tareas y hábitos de hoy' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="cuarto sticker izq" id="sticker" data-bg="#1B3A6B" data-fg="#FFFFFF" data-fg2="#C3CEE3" data-acento="#27AE60">
+    <div class="wrap">
+      <div>
+        <div class="rotulo"><img src="/img/logo-sticker.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. season over", "App propia. temporada terminada" %}</span></div>
+        <h2 class="nombre" translate="no">Sticker Tracker</h2>
+        <p class="que">{% t "The World Cup 2026 album, scanned 25 stickers per photo.", "El álbum del Mundial 2026, escaneado de a 25 láminas por foto." %}</p>
+        <p class="dificil">{% t "It closed at <b>4.9 stars from 59 ratings</b> on the App Store.", "Cerró con <b>4,9 estrellas y 59 calificaciones</b> en el App Store." %}</p>
+      </div>
+      <div class="tira dos">
+        <img src="/img/real-sticker-inicio.png" sizes="(max-width: 899px) 70vw, 280px" alt="{% t 'An album completed: 992 of 992', 'Un álbum completo: 992 de 992' %}">
+        <img src="/img/real-sticker-laminas.png" sizes="(max-width: 899px) 70vw, 280px" alt="{% t 'Every sticker, owned and doubled', 'Cada lámina, las que tienes y las repetidas' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="cuarto kintal" id="kintal" data-bg="#FFFFF3" data-fg="#1E2E2B" data-fg2="#4B605B" data-acento="#BD8054">
+    <div class="wrap">
+      <div class="vitrina-cliente">
+        <div class="rotulo">{% t "Client. Shopify store", "Cliente. Tienda en Shopify" %}</div>
+        <h2 class="nombre" translate="no">Kintal</h2>
+        <p class="que">{% t "Café Kintal's online store: custom theme, memberships, local payments and shipping.", "La tienda en línea de Café Kintal: tema a la medida, membresías, pagos locales y envíos." %}</p>
+      </div>
+      <div class="grano"><p>{% t "The store opens soon.<span>Full case study once it opens.</span>", "La tienda abre pronto.<span>El caso completo llega cuando abra.</span>" %}</p></div>
+    </div>
+  </section>
+
+  <section class="casa" id="servicios" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <h2>{% t "What Alanthic does", "Qué hace Alanthic" %}</h2>
+      <ul class="servicios">
+        <li><h3>{% t "Mobile apps", "Apps móviles" %}</h3><p>{% t "iOS and Android from one codebase. Accounts, payments and subscriptions, notifications, and getting through App Store review.", "iOS y Android con una sola base de código. Cuentas, pagos y suscripciones, notificaciones y publicación en las tiendas, incluida la revisión de Apple." %}</p></li>
+        <li><h3>{% t "Websites and web apps", "Sitios y apps web" %}</h3><p>{% t "From a launch page to a web product with users, payments and an admin panel.", "Desde una página para lanzar hasta un producto web con usuarios, pagos y panel de administración." %}</p></li>
+        <li><h3>{% t "Online stores", "Tiendas en línea" %}</h3><p>{% t "Shopify with a custom theme, your country's payments and shipping, and products or memberships.", "Shopify con tema a la medida, pagos y envíos de tu país, y productos o membresías." %}</p></li>
+        <li><h3>{% t "Maintenance", "Mantenimiento" %}</h3><p>{% t "A monthly plan that keeps what you launched working: iOS and Android updates, bug fixes, renewals and small improvements.", "Una mensualidad para que lo que lanzaste siga funcionando: actualizaciones de iOS y Android, errores, renovaciones y mejoras pequeñas." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="casa" id="como" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <h2>{% t "How it works", "Cómo se trabaja" %}</h2>
+      <ol class="pasos">
+        <li><div><b>{% t "You write to me", "Me escribes" %}</b><span>{% t "Share the idea, who it's for and when you need it, and we set up a meeting.", "Cuéntame la idea, para quién es y cuándo la necesitas, y coordinamos una reunión." %}</span></div></li>
+        <li><div><b>{% t "A proposal", "Propuesta" %}</b><span>{% t "With a fixed price, scope and dates, within 3 business days.", "Con precio cerrado, alcance y fechas, en 3 días hábiles." %}</span></div></li>
+        <li><div><b>{% t "Design and build", "Diseño y construcción" %}</b><span>{% t "With progress you try on your phone or browser every week.", "Con avances que pruebas en tu teléfono o navegador cada semana." %}</span></div></li>
+        <li><div><b>{% t "Launch", "Lanzamiento" %}</b><span>{% t "On the stores or your domain.", "Publicación en las tiendas o en tu dominio." %}</span></div></li>
+        <li><div><b>{% t "Maintenance", "Mantenimiento" %}</b><span>{% t "Monthly, if you want it.", "Cada mes, si lo quieres." %}</span></div></li>
+      </ol>
+      <p class="cobro">{% t "A fixed price per project, and a separate monthly plan for maintenance.", "Precio cerrado por proyecto, y una mensualidad aparte para el mantenimiento." %}</p>
+    </div>
+  </section>
+
+  <section class="casa estudio{% if not fotoEstudio %} sin-foto{% endif %}" id="estudio" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      {%- if fotoEstudio %}
+      <img class="foto" src="{{ fotoEstudio }}" sizes="380px" alt="Sergio Posada">
+      {%- endif %}
+      <div>
+        <h2>{% t "The studio", "El estudio" %}</h2>
+        <p class="yo">{% t "Alanthic is the studio of Sergio Posada. I'm a developer, and I love learning, improving how things get done and making people's lives easier.", "Alanthic es el estudio de Sergio Posada. Soy desarrollador, y me apasiona aprender, mejorar procesos y facilitarle la vida a las personas." %}</p>
+        <p class="uno">{% t "One person accountable for your product end to end: design, code, stores and servers. From Houston, Texas.", "Una sola persona responsable de tu producto de punta a punta: diseño, código, tiendas y servidores. Desde Houston, Texas." %}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="casa contacto" id="contacto" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <form class="form" name="contacto" method="POST" action="{{ '/es/contacto/gracias/' if es else '/contact/thanks/' }}" data-netlify="true" netlify-honeypot="sitio-web">
+        <input type="hidden" name="form-name" value="contacto">
+        <input type="hidden" name="idioma" value="{{ page.lang }}">
+        <p class="oculto" aria-hidden="true"><label>No llenar <input name="sitio-web" tabindex="-1" autocomplete="off"></label></p>
+        <h2>{% t "Have a project in mind?", "¿Tienes un proyecto en mente?" %}</h2>
+        <label><span>{% t "Name", "Nombre" %}</span><input name="nombre" autocomplete="name" required></label>
+        <label><span>{% t "Email", "Correo" %}</span><input name="correo" type="email" autocomplete="email" spellcheck="false" inputmode="email" required></label>
+        <fieldset>
+          <legend>{% t "What do you need?", "¿Qué necesitas?" %}</legend>
+          <div class="opciones">
+            <label><input type="radio" name="tipo" value="app"><span>{% t "An app", "Una app" %}</span></label>
+            <label><input type="radio" name="tipo" value="sitio"><span>{% t "A website", "Un sitio web" %}</span></label>
+            <label><input type="radio" name="tipo" value="tienda"><span>{% t "A store", "Una tienda" %}</span></label>
+            <label><input type="radio" name="tipo" value="mantenimiento"><span>{% t "Maintenance", "Mantenimiento" %}</span></label>
+            <label><input type="radio" name="tipo" value="otro"><span>{% t "Something else", "Otra cosa" %}</span></label>
+          </div>
+        </fieldset>
+        <label><span>{% t "Tell me more", "Cuéntame más" %}</span><textarea name="mensaje"></textarea></label>
+        <div><button class="boton" type="submit">{% t "Send message", "Enviar mensaje" %}</button></div>
+      </form>
+      <div class="lado">
+        <p>{% t "You'll hear back within two business days, in English or Spanish.", "La respuesta llega en dos días hábiles, en español o en inglés." %}</p>
+        <p>{% t "Prefer email?", "¿Prefieres el correo?" %}</p>
+        <div class="correo"><a class="boton" href="mailto:{{ sitio.correo }}">{{ sitio.correo }}</a><button class="copiar" type="button" data-correo="{{ sitio.correo }}" data-hecho="{% t 'Copied', 'Copiado' %}" hidden>{% t "Copy", "Copiar" %}</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie" data-bg="#EDECE7">
+  <div class="wrap">
+    <span>Alanthic LLC, Houston, Texas</span>
+    <span class="legal"><a href="{{ a.pazo.legal[page.lang] }}">{% t "Pazo Run legal", "Legales de Pazo Run" %}</a><a href="{{ a.kittsu.legal[page.lang] }}">{% t "Kittsu legal", "Legales de Kittsu" %}</a><a href="{{ a.collecty.legal[page.lang] }}">{% t "Collecty legal", "Legales de Collecty" %}</a></span>
+    <span>© 2026</span>
+  </div>
+</footer>

@@ -1,0 +1,21 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+pazo: ["", "privacy/", "health-data/", "terms/", "delete-account/", "support/"]
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for p in collections.all %}{% if p.data.alternas %}
+  <url>
+    <loc>{{ sitio.url }}{{ p.url }}</loc>
+    {%- for alt in p.data.alternas %}
+    <xhtml:link rel="alternate" hreflang="{{ alt.lang }}" href="{{ sitio.url }}{{ alt.url }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ sitio.url }}{{ p.data.xDefault }}"/>
+  </url>
+{%- endif %}{% endfor %}
+{%- for r in pazo %}
+  <url><loc>{{ sitio.url }}/pazo/{{ r }}</loc></url>
+  <url><loc>{{ sitio.url }}/pazo/es/{{ r }}</loc></url>
+{%- endfor %}
+</urlset>
