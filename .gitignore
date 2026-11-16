@@ -16,6 +16,7 @@ Desktop.ini
 # Dependencias / build (por si el sitio crece)
 node_modules/
 dist/
+_site/
 .cache/
 
 # Secretos — nunca commitear

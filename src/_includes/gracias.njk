@@ -1,0 +1,12 @@
+<header class="nav">
+  <div class="wrap">
+    <a class="marca" href="{{ '/es/' if page.lang == 'es' else '/' }}" aria-label="Alanthic">Alanthic <svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><circle cx="4" cy="5" r="4"/><circle cx="15" cy="5" r="3"/><circle cx="25" cy="5" r="2"/></svg></a>
+  </div>
+</header>
+<main class="casa contacto" id="contenido">
+  <div class="wrap" style="display:block">
+    <h1>{% t "Message received.", "Mensaje recibido." %}</h1>
+    <p>{% t "Thanks for writing. You'll hear back within two business days, in English or Spanish.", "Gracias por escribir. La respuesta llega en dos días hábiles, en español o en inglés." %}</p>
+    <a class="boton" href="{{ '/es/' if page.lang == 'es' else '/' }}">{% t "Back to the home page", "Volver al inicio" %}</a>
+  </div>
+</main>

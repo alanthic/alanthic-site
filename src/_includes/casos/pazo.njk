@@ -1,0 +1,98 @@
+{%- set es = page.lang == "es" -%}
+{%- set a = sitio.apps -%}
+{%- set inicioUrl = "/es/" if es else "/" -%}
+{%- set c = 'data-bg="#0B0D0A" data-fg="#F2F5EC" data-fg2="#A6AC9E" data-acento="#C8FF2E"' -%}
+{% include "nav.njk" %}
+
+<main id="contenido" class="caso pazo">
+  <section class="portada" {{ c | safe }}>
+    <div class="wrap">
+      <div>
+        <a class="volver" href="{{ inicioUrl }}#trabajos">← {% t "All work", "Todos los trabajos" %}</a>
+        <div class="rotulo"><img src="/img/logo-pazo.png" alt="" sizes="40px" eleventy:widths="80"><span>{% t "Own app. iOS, Android and Garmin", "App propia. iOS, Android y Garmin" %}</span></div>
+        <h1 class="nombre" translate="no">Pazo Run</h1>
+        <p class="linea">{% t "Running plans that move with your week, on your Garmin.", "Planes para correr que se ajustan a tu semana, en tu Garmin." %}</p>
+        <div class="salidas"><a href="{{ a.pazo.appStore }}">App Store</a><a href="{{ a.pazo.googlePlay }}">Google Play</a></div>
+      </div>
+      <div class="tira">
+        <img src="/img/real-pazo-hoy.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'Today: how the run felt and what comes next', 'Hoy: cómo se sintió la carrera y lo que sigue' %}">
+        <img src="/img/real-pazo-plan.png" sizes="(max-width: 899px) 70vw, 230px" loading="eager" alt="{% t 'The plan, phase by phase', 'El plan, fase por fase' %}">
+        <img src="/img/real-pazo-progreso.png" sizes="(max-width: 899px) 70vw, 230px" alt="{% t 'Weekly distance and predicted race time', 'Distancia semanal y tiempo estimado de carrera' %}">
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "The problem", "El problema" %}</h2>
+      <p class="texto">{% t "Most training plans are a PDF with dates. Miss a week and the plan doesn't notice; the workouts still have to be typed into the watch by hand, one step at a time. Pazo builds the plan for your race, <b>adjusts it to the week you actually had</b> and puts every workout on your Garmin.", "La mayoría de los planes para correr son un PDF con fechas. Si fallas una semana, el plan no se entera, y cada entreno hay que pasarlo al reloj a mano, paso por paso. Pazo arma el plan para tu carrera, <b>lo ajusta a la semana que de verdad tuviste</b> y pone cada entreno en tu Garmin." %}</p>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What was hard", "Lo difícil" %}</h2>
+      <div class="retos">
+        <div class="reto">
+          <div>
+            <h3>{% t "A watch app written from scratch", "Una app de reloj escrita desde cero" %}</h3>
+            <p>{% t "Garmin's developer program was closed to new applicants, so there was no API to send workouts through. Pazo got its own Connect IQ app instead: it downloads each workout and runs it in the watch's native workout screen, with step changes, repeats and pace alerts. Once synced, the workouts keep working without the phone.", "El programa de desarrolladores de Garmin estaba cerrado a nuevas solicitudes, así que no había API para mandar los entrenos. Pazo tiene entonces su propia app de Connect IQ: descarga cada entreno y lo corre en la pantalla nativa de entrenos del reloj, con cambios de paso, repeticiones y alertas de ritmo. Una vez sincronizados, los entrenos funcionan sin el teléfono." %}</p>
+          </div>
+          <figure><img src="/img/pazo-reloj-hoy.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'The Pazo watch app with the workout for today', 'La app de Pazo en el reloj con el entreno de hoy' %}"><figcaption>{% t "Today's workout, on the watch.", "El entreno de hoy, en el reloj." %}</figcaption></figure>
+        </div>
+        <div class="reto">
+          <div>
+            <h3>{% t "Pairing without accounts", "Vincular sin cuentas" %}</h3>
+            <p>{% t "A watch has no keyboard. The watch shows a six-letter code, like a TV app does, and you type it once in the phone. No logins on the wrist.", "Un reloj no tiene teclado. El reloj muestra un código de seis letras, como una app de TV, y lo escribes una vez en el teléfono. Nada de iniciar sesión en la muñeca." %}</p>
+          </div>
+          <figure><img src="/img/pazo-reloj-codigo.png" sizes="300px" eleventy:widths="300,600" alt="{% t 'The watch showing a six-letter pairing code', 'El reloj mostrando un código de vinculación de seis letras' %}"><figcaption>{% t "The pairing code, on the watch.", "El código para vincular, en el reloj." %}</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Decisions", "Decisiones" %}</h2>
+      <ul class="decisiones">
+        <li><h3>{% t "Runs come from the phone's health app", "Las carreras salen de la app de salud del teléfono" %}</h3><p>{% t "Pazo reads the runs your watch already saves to Apple Health or Health Connect, and ticks off the workouts you did.", "Pazo lee las carreras que tu reloj ya guarda en Apple Health o Health Connect, y marca los entrenos que hiciste." %}</p><p class="no">{% t "<b>Left out:</b> asking for one more account to connect.", "<b>Descartado:</b> pedirte una cuenta más para conectar." %}</p></li>
+        <li><h3>{% t "Honest about your goal", "Honesto con tu objetivo" %}</h3><p>{% t "Before the plan starts, Pazo tells you how realistic your goal time is.", "Antes de empezar el plan, Pazo te dice qué tan realista es tu tiempo objetivo." %}</p><p class="no">{% t "<b>Left out:</b> accepting any goal and failing quietly in week 10.", "<b>Descartado:</b> aceptar cualquier meta y fallar en silencio en la semana 10." %}</p></li>
+        <li><h3>{% t "No Strava at launch", "Sin Strava en el lanzamiento" %}</h3><p>{% t "Strava's 2026 API terms didn't fit how Pazo needed to use the data.", "Los términos de la API de Strava de 2026 no encajaban con el uso que Pazo necesitaba darle a los datos." %}</p><p class="no">{% t "<b>Left out:</b> building on an integration that could be cut off later.", "<b>Descartado:</b> construir sobre una integración que podían cortar después." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "Where it is today", "Dónde está hoy" %}</h2>
+      <ul class="hechos">
+        <li><div class="dato">{% t "On the App Store and Google Play", "En App Store y Google Play" %}</div><p class="fuente">{% t "App Store since November 11, 2026.", "App Store desde el 11 de noviembre de 2026." %}</p></li>
+        <li><div class="dato">{% t "Free watch app on Connect IQ", "App gratis del reloj en Connect IQ" %}</div><p class="fuente">{% t "Garmin's own app store.", "La tienda de apps de Garmin." %}</p></li>
+        <li><div class="dato">{% t "Forerunner, Fenix, Epix, Venu and vívoactive", "Forerunner, Fenix, Epix, Venu y vívoactive" %}</div><p class="fuente">{% t "Garmin watches with Connect IQ.", "Relojes Garmin con Connect IQ." %}</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tramo" {{ c | safe }}>
+    <div class="wrap">
+      <h2>{% t "What Alanthic did", "Qué hizo Alanthic" %}</h2>
+      <dl class="ficha">
+        <div><dt>{% t "Project", "Proyecto" %}</dt><dd>{% t "Own product", "Producto propio" %}</dd></div>
+        <div><dt>{% t "Platforms", "Plataformas" %}</dt><dd>{% t "iPhone, Android and Garmin watches", "iPhone, Android y relojes Garmin" %}</dd></div>
+        <div><dt>{% t "Role", "Rol" %}</dt><dd>{% t "Product, design, phone and watch apps, server", "Producto, diseño, apps del teléfono y del reloj, servidor" %}</dd></div>
+        <div><dt>{% t "Built with", "Hecho con" %}</dt><dd>{% t "One codebase for iPhone and Android (Expo), Supabase, RevenueCat for the subscription and Monkey C for the watch", "Una sola base de código para iPhone y Android (Expo), Supabase, RevenueCat para la suscripción y Monkey C para el reloj" %}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  {%- set tituloContacto = "¿Tienes algo parecido en mente?" if es else "Have something similar in mind?" %}
+  {% include "contacto.njk" %}
+
+  <section class="siguiente" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <a href="{{ '/es' if es }}/apps/collecty/" style="--p-bg:#F4EEE3;--p-fg:#1F1A12"><img src="/img/logo-collecty.png" alt="" sizes="52px" eleventy:widths="104"><span><small>{% t "Next", "Siguiente" %}</small><b translate="no">Collecty</b></span></a>
+    </div>
+  </section>
+</main>
+
+{% include "pie.njk" %}
