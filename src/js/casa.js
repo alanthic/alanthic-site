@@ -1,7 +1,8 @@
 // La casa toma el color del cuarto que tienes en pantalla, y el menú marca la sección.
 // El sitio funciona completo sin este archivo.
 const raiz = document.documentElement.style;
-const enlaces = document.querySelectorAll('.cuartos a');
+// En las páginas de app el menú ya marca Trabajos desde la plantilla.
+const enlaces = document.getElementById('trabajos') ? document.querySelectorAll('.cuartos a') : [];
 const cuartos = ['pazo', 'collecty', 'kittsu', 'sticker', 'kintal'];
 const seccionDe = (id) => (cuartos.includes(id) ? 'trabajos' : id);
 const io = new IntersectionObserver((entradas) => {

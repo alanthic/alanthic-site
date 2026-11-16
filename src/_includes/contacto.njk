@@ -1,0 +1,32 @@
+{#- Formulario de contacto. origen dice desde qué página escribió cada persona. -#}
+{%- set es = page.lang == "es" -%}
+  <section class="casa contacto" id="contacto" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
+    <div class="wrap">
+      <form class="form" name="contacto" method="POST" action="{{ '/es/contacto/gracias/' if es else '/contact/thanks/' }}" data-netlify="true" netlify-honeypot="sitio-web">
+        <input type="hidden" name="form-name" value="contacto">
+        <input type="hidden" name="idioma" value="{{ page.lang }}">
+        <input type="hidden" name="origen" value="{{ origen or 'inicio' }}">
+        <p class="oculto" aria-hidden="true"><label>No llenar <input name="sitio-web" tabindex="-1" autocomplete="off"></label></p>
+        <h2>{% if tituloContacto %}{{ tituloContacto }}{% else %}{% t "Have a project in mind?", "¿Tienes un proyecto en mente?" %}{% endif %}</h2>
+        <label><span>{% t "Name", "Nombre" %}</span><input name="nombre" autocomplete="name" required></label>
+        <label><span>{% t "Email", "Correo" %}</span><input name="correo" type="email" autocomplete="email" spellcheck="false" inputmode="email" required></label>
+        <fieldset>
+          <legend>{% t "What do you need?", "¿Qué necesitas?" %}</legend>
+          <div class="opciones">
+            <label><input type="radio" name="tipo" value="app"><span>{% t "An app", "Una app" %}</span></label>
+            <label><input type="radio" name="tipo" value="sitio"><span>{% t "A website", "Un sitio web" %}</span></label>
+            <label><input type="radio" name="tipo" value="tienda"><span>{% t "A store", "Una tienda" %}</span></label>
+            <label><input type="radio" name="tipo" value="mantenimiento"><span>{% t "Maintenance", "Mantenimiento" %}</span></label>
+            <label><input type="radio" name="tipo" value="otro"><span>{% t "Something else", "Otra cosa" %}</span></label>
+          </div>
+        </fieldset>
+        <label><span>{% t "Tell me more", "Cuéntame más" %}</span><textarea name="mensaje"></textarea></label>
+        <div><button class="boton" type="submit">{% t "Send message", "Enviar mensaje" %}</button></div>
+      </form>
+      <div class="lado">
+        <p>{% t "You'll hear back within two business days, in English or Spanish.", "La respuesta llega en dos días hábiles, en español o en inglés." %}</p>
+        <p>{% t "Prefer email?", "¿Prefieres el correo?" %}</p>
+        <div class="correo"><a class="boton" href="mailto:{{ sitio.correo }}">{{ sitio.correo }}</a><button class="copiar" type="button" data-correo="{{ sitio.correo }}" data-hecho="{% t 'Copied', 'Copiado' %}" hidden>{% t "Copy", "Copiar" %}</button></div>
+      </div>
+    </div>
+  </section>

@@ -1,22 +1,7 @@
 {%- set es = page.lang == "es" -%}
 {%- set a = sitio.apps -%}
 {%- set tiraSizes = "(max-width: 899px) 70vw, 230px" -%}
-<a class="saltar" href="#contenido">{% t "Skip to content", "Saltar al contenido" %}</a>
-
-<header class="nav">
-  <div class="wrap">
-    <a class="marca" href="{{ '/es/' if es else '/' }}" aria-label="Alanthic">Alanthic <svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><circle cx="4" cy="5" r="4"/><circle cx="15" cy="5" r="3"/><circle cx="25" cy="5" r="2"/></svg></a>
-    <nav class="cuartos" aria-label="{% t 'Main', 'Principal' %}">
-      <a href="#trabajos">{% t "Work", "Trabajos" %}</a><a href="#servicios">{% t "Services", "Servicios" %}</a><a href="#como">{% t "How it works", "Cómo se trabaja" %}</a><a href="#estudio">{% t "Studio", "Estudio" %}</a>
-    </nav>
-    {%- if es %}
-    <a class="idioma" href="/" lang="en" hreflang="en">English</a>
-    {%- else %}
-    <a class="idioma" href="/es/" lang="es" hreflang="es">Español</a>
-    {%- endif %}
-    <a class="boton" href="#contacto">{% t "Contact", "Contacto" %}</a>
-  </div>
-</header>
+{% include "nav.njk" %}
 
 <main id="contenido">
   <section class="heroe" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
@@ -157,41 +142,7 @@
     </div>
   </section>
 
-  <section class="casa contacto" id="contacto" data-bg="#EDECE7" data-fg="#1A1B19" data-fg2="#5B5D58" data-acento="#0F4C4A">
-    <div class="wrap">
-      <form class="form" name="contacto" method="POST" action="{{ '/es/contacto/gracias/' if es else '/contact/thanks/' }}" data-netlify="true" netlify-honeypot="sitio-web">
-        <input type="hidden" name="form-name" value="contacto">
-        <input type="hidden" name="idioma" value="{{ page.lang }}">
-        <p class="oculto" aria-hidden="true"><label>No llenar <input name="sitio-web" tabindex="-1" autocomplete="off"></label></p>
-        <h2>{% t "Have a project in mind?", "¿Tienes un proyecto en mente?" %}</h2>
-        <label><span>{% t "Name", "Nombre" %}</span><input name="nombre" autocomplete="name" required></label>
-        <label><span>{% t "Email", "Correo" %}</span><input name="correo" type="email" autocomplete="email" spellcheck="false" inputmode="email" required></label>
-        <fieldset>
-          <legend>{% t "What do you need?", "¿Qué necesitas?" %}</legend>
-          <div class="opciones">
-            <label><input type="radio" name="tipo" value="app"><span>{% t "An app", "Una app" %}</span></label>
-            <label><input type="radio" name="tipo" value="sitio"><span>{% t "A website", "Un sitio web" %}</span></label>
-            <label><input type="radio" name="tipo" value="tienda"><span>{% t "A store", "Una tienda" %}</span></label>
-            <label><input type="radio" name="tipo" value="mantenimiento"><span>{% t "Maintenance", "Mantenimiento" %}</span></label>
-            <label><input type="radio" name="tipo" value="otro"><span>{% t "Something else", "Otra cosa" %}</span></label>
-          </div>
-        </fieldset>
-        <label><span>{% t "Tell me more", "Cuéntame más" %}</span><textarea name="mensaje"></textarea></label>
-        <div><button class="boton" type="submit">{% t "Send message", "Enviar mensaje" %}</button></div>
-      </form>
-      <div class="lado">
-        <p>{% t "You'll hear back within two business days, in English or Spanish.", "La respuesta llega en dos días hábiles, en español o en inglés." %}</p>
-        <p>{% t "Prefer email?", "¿Prefieres el correo?" %}</p>
-        <div class="correo"><a class="boton" href="mailto:{{ sitio.correo }}">{{ sitio.correo }}</a><button class="copiar" type="button" data-correo="{{ sitio.correo }}" data-hecho="{% t 'Copied', 'Copiado' %}" hidden>{% t "Copy", "Copiar" %}</button></div>
-      </div>
-    </div>
-  </section>
+{% include "contacto.njk" %}
 </main>
 
-<footer class="pie" data-bg="#EDECE7">
-  <div class="wrap">
-    <span>Alanthic LLC, Houston, Texas</span>
-    <span class="legal"><a href="{{ a.pazo.legal[page.lang] }}">{% t "Pazo Run legal", "Legales de Pazo Run" %}</a><a href="{{ a.kittsu.legal[page.lang] }}">{% t "Kittsu legal", "Legales de Kittsu" %}</a><a href="{{ a.collecty.legal[page.lang] }}">{% t "Collecty legal", "Legales de Collecty" %}</a></span>
-    <span>© 2026</span>
-  </div>
-</footer>
+{% include "pie.njk" %}

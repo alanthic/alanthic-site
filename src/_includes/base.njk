@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="{{ page.lang }}">
+<html lang="{{ page.lang }}"{% if colores %} style="--bg:{{ colores.bg }};--fg:{{ colores.fg }};--fg-2:{{ colores.fg2 }};--acento:{{ colores.acento }}"{% endif %}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{ titulo }}</title>
 <meta name="description" content="{{ descripcion }}">
-<meta name="theme-color" content="#EDECE7">
+<meta name="theme-color" content="{{ colores.bg if colores else '#EDECE7' }}">
 {%- if noindex %}
 <meta name="robots" content="noindex">
 {%- endif %}
@@ -20,7 +20,7 @@
 <meta property="og:description" content="{{ descripcion }}">
 <meta property="og:url" content="{{ sitio.url }}{{ page.url }}">
 <meta property="og:locale" content="{{ 'es_CO' if page.lang == 'es' else 'en_US' }}">
-<meta property="og:image" content="{{ sitio.url }}/og-{{ page.lang }}.png">
+<meta property="og:image" content="{{ sitio.url }}{{ ogImagen or ('/og-' + page.lang + '.png') }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{{ ogAlt }}">

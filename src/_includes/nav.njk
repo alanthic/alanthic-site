@@ -1,0 +1,17 @@
+{#- Menú común. En el inicio las anclas son locales; en otras páginas van al inicio. -#}
+{%- set es = page.lang == "es" -%}
+{%- set pre = "" if inicio else ("/es/" if es else "/") -%}
+<a class="saltar" href="#contenido">{% t "Skip to content", "Saltar al contenido" %}</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="marca" href="{{ '/es/' if es else '/' }}" aria-label="Alanthic">Alanthic <svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><circle cx="4" cy="5" r="4"/><circle cx="15" cy="5" r="3"/><circle cx="25" cy="5" r="2"/></svg></a>
+    <nav class="cuartos" aria-label="{% t 'Main', 'Principal' %}">
+      <a href="{{ pre }}#trabajos"{% if not inicio %} aria-current="true"{% endif %}>{% t "Work", "Trabajos" %}</a><a href="{{ pre }}#servicios">{% t "Services", "Servicios" %}</a><a href="{{ pre }}#como">{% t "How it works", "Cómo se trabaja" %}</a><a href="{{ pre }}#estudio">{% t "Studio", "Estudio" %}</a>
+    </nav>
+    {%- for alt in alternas %}{% if alt.lang != page.lang %}
+    <a class="idioma" href="{{ alt.url }}" lang="{{ alt.lang }}" hreflang="{{ alt.lang }}">{{ "English" if alt.lang == "en" else "Español" }}</a>
+    {%- endif %}{% endfor %}
+    <a class="boton" href="#contacto">{% t "Contact", "Contacto" %}</a>
+  </div>
+</header>
