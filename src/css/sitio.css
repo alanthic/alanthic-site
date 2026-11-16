@@ -1,12 +1,14 @@
+/* Respaldo con las medidas de Schibsted (Capsize): el texto no salta cuando llega la fuente. */
+@font-face { font-family: 'Schibsted Grotesk Fallback'; src: local('Arial'), local('ArialMT'); ascent-override: 93.4593%; descent-override: 24.6733%; line-gap-override: 0%; size-adjust: 104.4907%; }
 /* Fuentes autoalojadas (OFL). La casa: Schibsted Grotesk. Cada cuarto: la letra de su app. */
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 400; font-display: swap; src: url(/fonts/schibsted-grotesk-latin-400-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 500; font-display: swap; src: url(/fonts/schibsted-grotesk-latin-500-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 600; font-display: swap; src: url(/fonts/schibsted-grotesk-latin-600-normal.woff2) format('woff2'); }
 @font-face { font-family: 'Schibsted Grotesk'; font-weight: 700; font-display: swap; src: url(/fonts/schibsted-grotesk-latin-700-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(/fonts/archivo-latin-wdth-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Archivo'; font-style: italic; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(/fonts/archivo-latin-wdth-italic.woff2) format('woff2'); }
-@font-face { font-family: 'Bricolage Grotesque'; font-weight: 200 800; font-display: swap; src: url(/fonts/bricolage-grotesque-latin-opsz-normal.woff2) format('woff2'); }
-@font-face { font-family: 'DM Sans'; font-weight: 100 1000; font-display: swap; src: url(/fonts/dm-sans-latin-opsz-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Archivo'; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(/fonts/archivo-kintal.woff2) format('woff2'); }
+@font-face { font-family: 'Archivo'; font-style: italic; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(/fonts/archivo-nombre-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Bricolage Grotesque'; font-weight: 200 800; font-display: swap; src: url(/fonts/bricolage-nombre.woff2) format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-weight: 100 1000; font-display: swap; src: url(/fonts/dm-sans-nombre.woff2) format('woff2'); }
 @font-face { font-family: 'Source Sans 3'; font-weight: 400; font-display: swap; src: url(/fonts/source-sans-3-latin-400-normal.woff2) format('woff2'); }
 /* Inicio v3: el contenido final sobre la Vitrina.
      El estudio es una casa quieta (concreto, Schibsted); cada trabajo es un cuarto con SUS colores
@@ -16,7 +18,7 @@
     --grafito: #1A1B19;
     --gris: #5B5D58;
     --fondo: #0F4C4A;
-    --casa: 'Schibsted Grotesk', 'Segoe UI', sans-serif;
+    --casa: 'Schibsted Grotesk', 'Schibsted Grotesk Fallback', sans-serif;
 
     /* Lo cambia el observador de cuartos. */
     --bg: var(--concreto);
@@ -287,3 +289,9 @@ a.idioma { display: inline-flex; align-items: center; min-height: 44px; }
 
 .salidas a.ver-caso { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.125rem; border-radius: 8px; background: var(--fg); color: var(--bg); transition: background-color var(--cambio), color var(--cambio), transform 160ms var(--salida, cubic-bezier(.23,1,.32,1)); }
 .salidas a.ver-caso:active { transform: scale(0.97); }
+
+/* En celular, la fila de pantallas se desplaza sola: no puede ensanchar la columna. */
+.cuarto .wrap > *, .caso .portada .wrap > *, .vitrina-cliente { min-width: 0; }
+/* Un correo largo parte línea en pantallas angostas en vez de salirse. */
+.correo .boton { white-space: normal; overflow-wrap: anywhere; text-align: left; padding-block: 0.625rem; }
+@media (max-width: 360px) { .nav .wrap { gap: 0.625rem; } .nav .boton { padding: 0 0.75rem; } .marca { font-size: 1.0625rem; } }

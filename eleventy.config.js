@@ -12,12 +12,10 @@ export default function (eleventyConfig) {
   const fv = "node_modules/@fontsource-variable";
   eleventyConfig.addPassthroughCopy({
     [`${f}/schibsted-grotesk/files/schibsted-grotesk-latin-{400,500,600,700}-normal.woff2`]: "fonts",
-    [`${fv}/archivo/files/archivo-latin-wdth-{normal,italic}.woff2`]: "fonts",
-    [`${fv}/bricolage-grotesque/files/bricolage-grotesque-latin-opsz-normal.woff2`]: "fonts/bricolage-grotesque-latin-opsz-normal.woff2",
-    [`${fv}/dm-sans/files/dm-sans-latin-opsz-normal.woff2`]: "fonts/dm-sans-latin-opsz-normal.woff2",
     [`${f}/source-sans-3/files/source-sans-3-latin-400-normal.woff2`]: "fonts/source-sans-3-latin-400-normal.woff2",
   });
-  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/js": "js" });
+  // Letras de cuarto recortadas al nombre de cada app (scripts/subconjunto-fuentes.mjs).
+  eleventyConfig.addPassthroughCopy({ "src/css": "css", "src/js": "js", "src/fonts": "fonts" });
 
   // EN en /, ES en /es/. page.lang sale de la ruta.
   eleventyConfig.addPlugin(I18nPlugin, { defaultLanguage: "en" });
